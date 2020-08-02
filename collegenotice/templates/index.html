@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %}
+Home
+{% endblock title %}
+{% block body %}
+{% load static %}
+<div class="container">
+<div class="row">
+<div class="col-lg-12">
+<h1 class="head text-center">Notices</h1>
+<div class="col-lg-12">
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Branch</th>
+      <th scope="col">Message</th>
+      <th scope="col">Date</th>
+    </tr>
+  </thead>
+  <tbody>
+{% for i in show %}
+    <tr>
+      <th scope="row">{{i.branch}}</th>
+      <td>{{i.subject}}...  {% if user.is_authenticated %}<a href="/fulldetails/{{i.notice_id}}" class="btn btn-primary btn-sm float-right"> Read More </a> {% else %}  <button type="button" class="btn btn-primary mx-2 float-right" data-toggle="modal" data-target="#login">
+  Please login for read more. 
+</button>{% endif %} 
+      </td>
+      <td>{{i.cr_date}}</td>
+    </tr>
+{% endfor %}
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+{% endblock body %}

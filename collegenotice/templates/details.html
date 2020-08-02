@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}
+Details
+{% endblock title %}
+{% block body %}
+{% load static %}
+<div class="container">
+<div class="row">
+<div class="col-lg-12">
+<h1 class="head text-center">Notice</h1>
+<div class="col-lg-12">
+
+<h4>{{details.subject}}</h4>
+<p>{{details.cr_date}}</p> <br>
+<p>{{details.msg}}</p>
+
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+{% endblock body %}
